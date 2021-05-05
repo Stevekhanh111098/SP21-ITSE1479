@@ -34,7 +34,7 @@ def main():
     jumpTable['7'] = stub                 # Hammad - call to function goes here
     jumpTable['8'] = stub                 # Hopper - call to function goes here
     jumpTable['9'] = stub                 # Newman - call to function goes here
-    jumpTable['10'] = stub                # Nguyen - call to function goes here
+    jumpTable['10'] = twelveAnimals                # Nguyen - call to function goes here
     jumpTable['11'] = stub                # Rodriguez Rosales - call to function goes here
     jumpTable['12'] = stub                # Seaman - call to function goes here
     jumpTable['13'] = stub                # Silva - call to function goes here
@@ -167,6 +167,43 @@ def smileyFib(numberOfTimes):
 
     print()
     print()
+
+def twelveAnimals():
+    GROUP0 = ('The Monkey','The Rooster', 'The Dog', 'The Pig', 'The Rat', 'The Ox', 'The Tiger',
+     'The Cat', 'The Dragon', 'The Snake', 'The Horse', 'The Goat')
+    GROUP1 = ('The Rat', 'The Ox', 'The Tiger', 'The Cat',
+    'The Dragon', 'The Snake', 'The Horse', 'The Goat', 'The Monkey','The Rooster', 'The Dog', 'The Pig')
+    GROUP2 = ('The Dragon', 'The Snake', 'The Horse', 'The Goat', 'The Monkey','The Rooster', 'The Dog', 'The Pig',
+    'The Rat', 'The Ox', 'The Tiger', 'The Cat')
+    yearInp = str(input("Please enter your year of birth or press x to quit: "))
+
+    while yearInp != 'x' or yearInp != 'X':
+        print (yearInp, ", The year of ", end='')
+        animal = animalInspect(yearInp)
+        group = groupInspect(yearInp)
+
+        if group == 0:
+            print (GROUP0[animal])
+        elif group == 1:
+            print (GROUP1[animal])
+        else:
+            print (GROUP2[animal])
+
+        yearInp = str(input("Please enter your year of birth or press x to quit: "))
+
+
+def animalInspect(year):
+    #define animal
+    a = year[-2:]
+    return int(a) % 12
+
+def groupInspect(year):
+    #define group
+    c = year[:-2]
+    return int(c) % 3
+
+
+
 
 #*****************************************************************
 # Please leave me alone,
